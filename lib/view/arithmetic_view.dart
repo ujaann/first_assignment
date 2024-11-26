@@ -16,54 +16,54 @@ class _ArithmeticViewState extends State<ArithmeticView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: [
-          TextField(
-            onChanged: (value) => first = int.parse(value),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: "First number:",
+      appBar: AppBar(),
+      body: Column(
+              children: [
+      TextField(
+        onChanged: (value) => first = int.parse(value),
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "First number:",
+        ),
+        keyboardType: TextInputType.number,
+      ),
+      gap8y,
+      TextField(
+        onChanged: (value) => second = int.parse(value),
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Second number:",
+        ),
+        keyboardType: TextInputType.number,
+      ),
+      gap8y,
+      Text("Result: $result",style: const TextStyle(fontSize: 22),),
+      gap8y,
+      ElevatedButton(
+          onPressed: () {
+            setState(() {
+              result = first + second;
+            });
+          },
+          child: const Text("Addition")),
+      gap8y,
+      ElevatedButton(
+          onPressed: () {
+            setState(() {
+              result = first - second;
+            });
+          },
+          child: const Text("Subtraction")),
+      gap8y,
+      ElevatedButton(
+          onPressed: () {
+            setState(() {
+              result = first * second;
+            });
+          },
+          child: const Text("Multiplication")),
+              ],
             ),
-            keyboardType: TextInputType.number,
-          ),
-          gap8y,
-          TextField(
-            onChanged: (value) => second = int.parse(value),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: "Second number:",
-            ),
-            keyboardType: TextInputType.number,
-          ),
-          gap8y,
-          Text("Result: $result",style: const TextStyle(fontSize: 22),),
-          gap8y,
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  result = first + second;
-                });
-              },
-              child: const Text("Addition")),
-          gap8y,
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  result = first - second;
-                });
-              },
-              child: const Text("Subtraction")),
-          gap8y,
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  result = first * second;
-                });
-              },
-              child: const Text("Multiplication")),
-        ],
-      )),
     );
   }
 }
