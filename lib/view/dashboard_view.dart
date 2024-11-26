@@ -1,3 +1,4 @@
+import 'package:first_assignment/widgets/gap.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
@@ -14,9 +15,9 @@ class DashboardView extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(onPressed: (){}, child: const Text("Arithmetic")),
-            const SizedBox(height: 8,),
+            gap8y,
             ElevatedButton(onPressed: (){}, child: const Text("Simple Interest")),
-            const SizedBox(height: 8,),
+            gap8y,
             ElevatedButton(onPressed: (){}, child: const Text("Area Of Circle")),
           ],
         ),
