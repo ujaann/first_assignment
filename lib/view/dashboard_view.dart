@@ -1,3 +1,6 @@
+import 'package:first_assignment/view/area_circle_view.dart';
+import 'package:first_assignment/view/arithmetic_view.dart';
+import 'package:first_assignment/view/simple_interest_view.dart';
 import 'package:first_assignment/widgets/gap.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +17,12 @@ class DashboardView extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            ElevatedButton(onPressed: (){}, child: const Text("Arithmetic")),
+            SizedBox(width:double.infinity,child: ElevatedButton(onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>const ArithmeticView())), child: const Text("Arithmetic"))),
             gap8y,
-            ElevatedButton(onPressed: (){}, child: const Text("Simple Interest")),
+            SizedBox(width:double.infinity,child: ElevatedButton(onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>const SimpleInterestView())), child: const Text("Simple Interest"))),
             gap8y,
-            ElevatedButton(onPressed: (){}, child: const Text("Area Of Circle")),
+            SizedBox(width:double.infinity,child: ElevatedButton(onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>const AreaCircleView())), child: const Text("Area Of Circle"))),
+            gap8y,
           ],
         ),
       ),
