@@ -18,44 +18,55 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-              children: [
-      TextField(
-        onChanged: (value) => principal = double.parse(value),
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Principal:",
-        ),
-        keyboardType: TextInputType.number,
-      ),
-      gap8y,
-      TextField(
-        onChanged: (value) => time = double.parse(value),
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Time in year:",
-        ),
-        keyboardType: TextInputType.number,
-      ),
-      gap8y,
-      TextField(
-        onChanged: (value) => rate = double.parse(value),
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Rate:",
-        ),
-        keyboardType: TextInputType.number,
-      ),
-      gap8y,
-      Text("Interest calculated: $interest"),
-      gap8y,
-      ElevatedButton(onPressed: () {
-        setState(() {
-          interest=principal*time*rate/100;
-        });
-      }, child: const Text("Calculate")),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            TextField(
+              onChanged: (value) => principal = double.parse(value),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Principal",
+              ),
+              keyboardType: TextInputType.number,
             ),
+            gap8y,
+            TextField(
+              onChanged: (value) => time = double.parse(value),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Time in years",
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            gap8y,
+            TextField(
+              onChanged: (value) => rate = double.parse(value),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Rate",
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            gap8y,
+            Text(
+              "Interest is: $interest",
+              style: const TextStyle(fontSize: 22),
+            ),
+            gap8y,
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      interest = principal * time * rate / 100;
+                    });
+                  },
+                  child: const Text("Calculate")),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
