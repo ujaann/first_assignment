@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-var gap8y=const SizedBox(height: 8,);
+const gap8y=SizedBox(height: 8,);
