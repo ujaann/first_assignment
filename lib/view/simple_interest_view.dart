@@ -1,4 +1,4 @@
-import 'package:first_assignment/widgets/gap.dart';
+import 'package:first_assignment/common/gap.dart';
 import 'package:flutter/material.dart';
 
 class SimpleInterestView extends StatefulWidget {
