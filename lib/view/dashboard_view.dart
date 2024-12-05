@@ -1,7 +1,7 @@
 import 'package:first_assignment/view/area_circle_view.dart';
 import 'package:first_assignment/view/arithmetic_view.dart';
 import 'package:first_assignment/view/simple_interest_view.dart';
-import 'package:first_assignment/widgets/gap.dart';
+import 'package:first_assignment/common/gap.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
